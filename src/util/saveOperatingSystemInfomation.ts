@@ -1,4 +1,4 @@
-import { OS } from '../types';
+import { OS } from '../types/common';
 
 const saveOperatingSystemInformation = () => {
   const { userAgent } = navigator;

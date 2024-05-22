@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 import Initial from './pages/Initial';
 import Result from './pages/Result';
 import getPermission from './util/getPermission';
-import SelectCity from './pages/SelectCity';
+import SelectionLocation from './pages/SelectionLocation';
 import Detail from './pages/Detail';
+import Hospitals from './pages/Hospitals';
+import Setting from './pages/Setting';
 
 const Router = () => {
   const [locationPermission, setLocationPermission] = useState<boolean | null>(
@@ -20,9 +22,11 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Initial isPermission={locationPermission} />} />
-      <Route path="/select" element={<SelectCity />} />
+      <Route path="/select" element={<SelectionLocation />} />
       <Route path="/result" element={<Result />} />
-      <Route path="/detail" element={<Detail />} />
+      <Route path="/result/:hospitalCode" element={<Detail />} />
+      <Route path="/hospitals" element={<Hospitals />} />
+      <Route path="setting" element={<Setting />} />
     </Routes>
   );
 };

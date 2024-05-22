@@ -1,4 +1,4 @@
-import { Position } from '../types';
+import { Position } from '../types/common';
 
 const saveLocationInformation = (position: GeolocationPosition | Position) => {
   let latitude = '';
@@ -11,7 +11,7 @@ const saveLocationInformation = (position: GeolocationPosition | Position) => {
     longitude = position.longitude;
   }
   sessionStorage.setItem('latitude', latitude);
-  sessionStorage.setItem('longitutde', longitude);
+  sessionStorage.setItem('longitude', longitude);
 };
 
 export default saveLocationInformation;
